@@ -32,3 +32,22 @@ public:
         return Head->val;
     }
 };
+
+//也可以考虑用快慢指针，先让快指针走k步，这样快指针到结尾时，慢指针就指向倒数第k个了
+class Solution {
+public:
+    int kthToLast(ListNode* head, int k) {
+        if(head->next == NULL) return head->val;
+        ListNode *slow = head, *fast = head;
+        while(k--){
+            fast = fast->next;
+        }
+        while(fast){
+            slow = slow->next;
+            fast = fast->next;
+        }
+        return slow->val;
+       
+    }
+};
+

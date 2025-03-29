@@ -1,3 +1,4 @@
+//直接摩尔投票法送走
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
